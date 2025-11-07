@@ -67,11 +67,9 @@ else:
                     enhanced_scores = sum(ats_enhancer.evaluate_lines(enhanced_points_list,job_description))/len(enhanced_points_list) if len(enhanced_points_list) > 0 else 0
                     res_col1, res_col2 = st.columns(2)
                     with res_col1:
-                        st.header("Original Bullet Points")
                         st.subheader(f"Original Score: {original_scores:.2f}/100")
                         st.text_area("Original Bullet Points", value=original_points_formatted, height=400)
                     with res_col2:
-                        st.header("Enhanced Bullet Points")
                         st.subheader(f"Enhanced Score: {enhanced_scores:.2f}/100")
                         st.text_area("Enhanced Bullet Points", value=enhanced_points.lstrip(), height=400)
                     st.success("Enhancement complete!")
